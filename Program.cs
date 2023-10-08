@@ -53,65 +53,69 @@ while (status == 'y')
     {
         // Read user input
         char input = Console.ReadKey(true).KeyChar;
-        // if the user got the letter right ...
-        if (word.Contains(input))
+        // Checks if the user has entered a valid character (only lowercase letters are allowed)
+        if ("abcdefghijklmnopqrstuvwxyz".Contains(input))
         {
-            for (int i = 0; i < word.Length; i++)
+            // if the user got the letter right ...
+            if (word.Contains(input))
             {
-                //... and if the letter he typed hasn't already been pressed...
-                //...the program draws the letters that he got right in their respective fields
-                if (word[i] == input && finalWord.Count(c => c == input) != word.Count(c => c == input))
+                for (int i = 0; i < word.Length; i++)
                 {
-                    Console.SetCursorPosition(i * 2, 9);
-                    Console.Write(input);
-                    finalWord[i] = input;
-                    successfulAttempts++;
+                    //... and if the letter he typed hasn't already been pressed...
+                    //...the program draws the letters that he got right in their respective fields
+                    if (word[i] == input && finalWord.Count(c => c == input) != word.Count(c => c == input))
+                    {
+                        Console.SetCursorPosition(i * 2, 9);
+                        Console.Write(input);
+                        finalWord[i] = input;
+                        successfulAttempts++;
+                    }
                 }
             }
-        }
-        // If he got the words wrong..
-        else
-        {
-            //... and if the letter hasn't already been pressed...
-            if (wrongLetters.IndexOf(input) == -1)
+            // If he got the words wrong..
+            else
             {
-                // The program will draw a body part
-                switch (failedAttempts)
+                //... and if the letter hasn't already been pressed...
+                if (wrongLetters.IndexOf(input) == -1)
                 {
-                    case 0:
-                        Console.SetCursorPosition(6, 3);
-                        Console.Write('O');
-                        break;
-                    case 1:
-                        Console.SetCursorPosition(6, 4);
-                        Console.Write('|');
-                        Console.SetCursorPosition(6, 5);
-                        Console.Write('|');
-                        break;
-                    case 2:
-                        Console.SetCursorPosition(5, 4);
-                        Console.Write('/');
-                        break;
-                    case 3:
-                        Console.SetCursorPosition(7, 4);
-                        Console.Write('\\');
-                        break;
-                    case 4:
-                        Console.SetCursorPosition(5, 6);
-                        Console.Write('/');
-                        break;
-                    case 5:
-                        Console.SetCursorPosition(7, 6);
-                        Console.Write('\\');
-                        break;
-                }
+                    // The program will draw a body part
+                    switch (failedAttempts)
+                    {
+                        case 0:
+                            Console.SetCursorPosition(6, 3);
+                            Console.Write('O');
+                            break;
+                        case 1:
+                            Console.SetCursorPosition(6, 4);
+                            Console.Write('|');
+                            Console.SetCursorPosition(6, 5);
+                            Console.Write('|');
+                            break;
+                        case 2:
+                            Console.SetCursorPosition(5, 4);
+                            Console.Write('/');
+                            break;
+                        case 3:
+                            Console.SetCursorPosition(7, 4);
+                            Console.Write('\\');
+                            break;
+                        case 4:
+                            Console.SetCursorPosition(5, 6);
+                            Console.Write('/');
+                            break;
+                        case 5:
+                            Console.SetCursorPosition(7, 6);
+                            Console.Write('\\');
+                            break;
+                    }
 
-                // And the program will also show the letter that you got wrong
-                Console.SetCursorPosition((failedAttempts * 4) + 9, 3);
-                Console.Write(input + " - ");
-                failedAttempts++;
+                    // And the program will also show the letter that you got wrong
+                    Console.SetCursorPosition((failedAttempts * 4) + 9, 3);
+                    Console.Write(input + " - ");
+                    failedAttempts++;
+                }
+                wrongLetters += input;
             }
-            wrongLetters += input;
         }
         // Send the cursor to the correct place
         Console.SetCursorPosition(16, 11);
