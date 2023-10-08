@@ -7,6 +7,15 @@ My first attempt to create a hangman's game, I didn't use any references, I did 
 
 <br>
 
+<h3>- GAME RULES:</h3>
+
+  - You have 6 letter kicks before the man is hanged;
+  - The program only accepts lowercase letters and nothing else;
+  - If you mistakenly press a key that has already been considered wrong, the program will not count it as an attempt;
+  - The same goes for the correct letters;
+
+<br>
+
 <h3>- RECOMMENDATIONS:</h3>
 
   - I recommend using .NET 7.0 (dotnet 7.0);
