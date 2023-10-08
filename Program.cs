@@ -24,12 +24,12 @@ while (status == 'y')
     Console.WriteLine();
 
     string[] hangman = { "   ____",
-                     "   |  |",
-                     "   |",
-                     "   | ",
-                     "   |  ",
-                     "   | ",
-                     "___|___" };
+                         "   |  |",
+                         "   |",
+                         "   | ",
+                         "   |  ",
+                         "   | ",
+                         "___|___" };
     // Draw the gallows
     foreach (string s in hangman)
     {
