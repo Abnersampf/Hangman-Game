@@ -120,6 +120,8 @@ while (status == 'y')
         // Send the cursor to the correct place
         Console.SetCursorPosition(16, 11);
     }
+    // Wait 1 second to show the result
+    Thread.Sleep(1000);
     // Clear the console when the game ends and print the final message
     Console.Clear();
     Console.SetCursorPosition(8, 5);
