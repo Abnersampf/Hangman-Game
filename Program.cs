@@ -20,8 +20,7 @@ while (status == 'y')
     // All the wrong letters will be concatenated in a single string
     string wrongLetters = "";
 
-    Console.Write("TIP: " + tip);
-    Console.WriteLine();
+    Console.WriteLine("TIP: " + tip);
 
     string[] hangman = { "   ____",
                          "   |  |",
