@@ -17,6 +17,7 @@ My first attempt to create a hangman's game, I didn't use any references, I did 
 <br>
 
 <h3>- RECOMMENDATIONS:</h3>
+
   - I recommend using Visual Studio 2023;
   - I recommend using .NET 7.0 (dotnet 7.0);
   - The program does NOT work with online compilers (it doesn't actually work very well);
